@@ -21,7 +21,8 @@ class AKPreferencesWindow : NSWindow {
         setFrameAutosaveName("Preferences")
         contentView = NSHostingView(rootView: PreferencesView().environment(\.managedObjectContext, CDManager.shared.moc))
         
-        title = "Preferences"
+        title = "Wake on Lan"
+        subtitle = "Preferences"
         
         let newToolbar = NSToolbar(identifier: self.mainWindowToolbarIdentifier)
         newToolbar.displayMode = .default
