@@ -6,16 +6,16 @@
 //
 
 import Cocoa
-import SwiftUI
 import CoreData
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var statusBarItem: NSStatusItem!
+    let statusBarMenu = NSMenu(title: "Status Bar Menu")
     
     var moc: NSManagedObjectContext!
-    let statusBarMenu = NSMenu(title: "Status Bar Menu")
+    var controller: NSFetchedResultsController<WOLDevice>!
     
     var notificationToken: NSObjectProtocol?
     
@@ -37,42 +37,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         moc = container.viewContext
         
-        // Core Data Controller
+        // Core Data Fetch Request
         let fetchRequest = NSFetchRequest<WOLDevice>(entityName: "WOLDevice")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
-        
-        let controller = NSFetchedResultsController(
+        // Core Data Controller
+        controller = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: moc,
             sectionNameKeyPath: nil,
             cacheName: nil
         )
-        controller.delegate = self
         
-        //
-        do {
-            try controller.performFetch()
-            let wolDevices = (controller.fetchedObjects ?? []) 
-            fillMenu(with: wolDevices)
-        } catch {
-            fatalError("Failed to fetch entities: \(error)")
-        }
+        // Init menu
+        fetchAndUpdate()
         
         // Suscribe to Core Data changes when Context saves changes
         notificationToken = NotificationCenter.default
             .addObserver(forName: .NSManagedObjectContextDidSave,
                          object: nil,
                          queue: nil) { _ in
-                do {
-                    try controller.performFetch()
-                } catch {
-                    fatalError("Failed to fetch entities: \(error)")
-                }
+                self.fetchAndUpdate()
             }
         
         NSApp.activate(ignoringOtherApps: true)
     }
+    
+}
+
+// MARK: - Fetch and fill menu {
+extension AppDelegate {
     
     func fillMenu(with objects: [WOLDevice]){
         
@@ -95,6 +89,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                               keyEquivalent: "")
     }
     
+    func fetchAndUpdate(){
+        do {
+            try controller.performFetch()
+            let wolDevices = (controller.fetchedObjects ?? [])
+            fillMenu(with: wolDevices)
+        } catch {
+            fatalError("Failed to fetch entities: \(error)")
+        }
+    }
 }
 
 // MARK: - Selectors
@@ -113,14 +116,4 @@ extension AppDelegate {
         let wolDevice = sender?.representedObject as! WOLDevice
         wolDevice.awake()
     }
-}
-
-// MARK: - NSFetchedResultsControllerDelegate
-extension AppDelegate : NSFetchedResultsControllerDelegate {
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        let wolDevices = (controller.fetchedObjects ?? []) as! [WOLDevice]
-        fillMenu(with: wolDevices)
-    }
-    
 }
