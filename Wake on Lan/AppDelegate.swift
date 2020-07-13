@@ -15,6 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var popover: NSPopover!
     var statusBarItem: NSStatusItem!
     
+    var moc: NSManagedObjectContext!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         // Create the SwiftUI view that provides the window contents.
@@ -24,9 +26,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 fatalError("Could not initialize CoreData")
             }
         }
-        CDManager.shared.moc = container.viewContext
+        moc = container.viewContext
+        
         let contentView = ContentView()
-            .environment(\.managedObjectContext, container.viewContext)
+            .environment(\.managedObjectContext, moc)
         
         // Create the popover
         let popover = NSPopover()

@@ -5,16 +5,19 @@
 //  Created by Iván Moreno Zambudio on 13/07/2020.
 //
 
-import Foundation
+import AppKit
 import CoreData
 
 struct CDManager {
     
     static var shared = CDManager()
     
-    var moc: NSManagedObjectContext!
+    private var moc: NSManagedObjectContext
     
-    private init(){}
+    private init(){
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        moc = appDelegate.moc
+    }
     
     private func save(){
         if moc.hasChanges {

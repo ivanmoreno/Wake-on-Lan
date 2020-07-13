@@ -34,6 +34,5 @@ extension WOLDevice {
         if error != nil {
             print(error)
         }
-        print(device)
     }
 }

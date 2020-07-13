@@ -19,7 +19,10 @@ class AKPreferencesWindow : NSWindow {
         
         center()
         setFrameAutosaveName("Preferences")
-        contentView = NSHostingView(rootView: PreferencesView().environment(\.managedObjectContext, CDManager.shared.moc))
+        
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        
+        contentView = NSHostingView(rootView: PreferencesView().environment(\.managedObjectContext, appDelegate.moc))
         
         title = "Wake on Lan"
         subtitle = "Preferences"
