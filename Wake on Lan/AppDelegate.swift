@@ -12,12 +12,11 @@ import CoreData
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    var popover: NSPopover!
     var statusBarItem: NSStatusItem!
     
     var moc: NSManagedObjectContext!
     let statusBarMenu = NSMenu(title: "Status Bar Menu")
-
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         // Create the SwiftUI view that provides the window contents.
@@ -29,22 +28,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         moc = container.viewContext
         
-        let contentView = ContentView()
-            .environment(\.managedObjectContext, moc)
-        
-        // Create the popover
-        let popover = NSPopover()
-        popover.contentSize = NSSize(width: 250, height: 400)
-        popover.behavior = .transient
-        popover.contentViewController = NSHostingController(rootView: contentView)
-        self.popover = popover
-        
         // Create the status item
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
-        
+        statusBarItem.menu = statusBarMenu
         if let button = self.statusBarItem.button {
             button.image = NSImage(systemSymbolName: "network", accessibilityDescription: "Wake on Lan")
-            button.action = #selector(togglePopover(_:))
         }
         
         let fetchRequest = NSFetchRequest<WOLDevice>(entityName: "WOLDevice")
@@ -61,25 +49,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } catch {
             fatalError("Failed to fetch entities: \(error)")
         }
-                // Setting menu
-                statusBarItem.menu = statusBarMenu
+        
         
         NSApp.activate(ignoringOtherApps: true)
     }
     
-    @objc func togglePopover(_ sender: AnyObject?){
-    }
-    
-    /*@objc func togglePopover(_ sender: AnyObject?) {
-        if let button = self.statusBarItem.button {
-            if self.popover.isShown {
-                self.popover.performClose(sender)
-            } else {
-                self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-                self.popover.contentViewController?.view.window?.becomeKey()
-            }
-        }
-    }*/
     
 }
 
@@ -98,14 +72,29 @@ extension AppDelegate : NSFetchedResultsControllerDelegate {
         window.isReleasedWhenClosed = false
     }
     
+    @objc func quitWOL(_ sender: AnyObject?){
+        NSApplication.shared.terminate(self)
+    }
+    
+    @objc func sendWOL(_ sender: AnyObject?){
+        let wolDevice = sender?.representedObject as! WOLDevice
+        wolDevice.awake()
+    }
+    
     func fillMenu(objects: [WOLDevice]){
         statusBarMenu.removeAllItems()
         objects.forEach { object in
-            statusBarMenu.addItem(withTitle: object.name,                     action: #selector(AppDelegate.togglePopover),
-                                  keyEquivalent: "")
+            
+            let item = NSMenuItem(title: object.name, action: #selector(AppDelegate.sendWOL(_:)), keyEquivalent: "")
+            item.representedObject = object
+            statusBarMenu.addItem(item)
         }
+        statusBarMenu.addItem(.separator())
         statusBarMenu.addItem(withTitle: "Preferences",
                               action: #selector(AppDelegate.openPreferences),
+                              keyEquivalent: "")
+        statusBarMenu.addItem(withTitle: "Quit",
+                              action: #selector(AppDelegate.quitWOL),
                               keyEquivalent: "")
     }
     

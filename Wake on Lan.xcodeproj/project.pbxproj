@@ -25,7 +25,6 @@
 		2CF6833424BCC46A00F980CF /* DeviceFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832124BCC46A00F980CF /* DeviceFormView.swift */; };
 		2CF6833524BCC46A00F980CF /* EditDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832224BCC46A00F980CF /* EditDeviceView.swift */; };
 		2CF6833624BCC46A00F980CF /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832324BCC46A00F980CF /* DeviceView.swift */; };
-		2CF6833724BCC46A00F980CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832424BCC46A00F980CF /* ContentView.swift */; };
 		2CF6833A24BCC92D00F980CF /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6833924BCC92D00F980CF /* Defaults.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		2CF6832124BCC46A00F980CF /* DeviceFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceFormView.swift; sourceTree = "<group>"; };
 		2CF6832224BCC46A00F980CF /* EditDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDeviceView.swift; sourceTree = "<group>"; };
 		2CF6832324BCC46A00F980CF /* DeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
-		2CF6832424BCC46A00F980CF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2CF6833824BCC52300F980CF /* Wake on Lan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wake on Lan.entitlements"; sourceTree = "<group>"; };
 		2CF6833924BCC92D00F980CF /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		459A278D23AA910B003D50EC /* Wake on Lan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wake on Lan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,7 +113,6 @@
 			children = (
 				2CF6831B24BCC46A00F980CF /* Preferences */,
 				2CF6832324BCC46A00F980CF /* DeviceView.swift */,
-				2CF6832424BCC46A00F980CF /* ContentView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -241,7 +238,6 @@
 				2CF6832724BCC46A00F980CF /* WOLDevice+CoreDataClass.swift in Sources */,
 				2CF6832524BCC46A00F980CF /* WOLDevice+CoreDataProperties.swift in Sources */,
 				2CF6833624BCC46A00F980CF /* DeviceView.swift in Sources */,
-				2CF6833724BCC46A00F980CF /* ContentView.swift in Sources */,
 				2CF6833524BCC46A00F980CF /* EditDeviceView.swift in Sources */,
 				2CF6833424BCC46A00F980CF /* DeviceFormView.swift in Sources */,
 				2CF6833224BCC46A00F980CF /* AddDeviceView.swift in Sources */,
