@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2CF6832524BCC46A00F980CF /* WOLDevice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6830A24BCC46A00F980CF /* WOLDevice+CoreDataProperties.swift */; };
+		2CF6832624BCC46A00F980CF /* WOL.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6830B24BCC46A00F980CF /* WOL.xcdatamodeld */; };
+		2CF6832724BCC46A00F980CF /* WOLDevice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6830D24BCC46A00F980CF /* WOLDevice+CoreDataClass.swift */; };
+		2CF6832824BCC46A00F980CF /* CDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6830E24BCC46A00F980CF /* CDManager.swift */; };
+		2CF6832924BCC46A00F980CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6830F24BCC46A00F980CF /* Assets.xcassets */; };
+		2CF6832A24BCC46A00F980CF /* Awake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831124BCC46A00F980CF /* Awake.swift */; };
+		2CF6832B24BCC46A00F980CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6831324BCC46A00F980CF /* Preview Assets.xcassets */; };
+		2CF6832C24BCC46A00F980CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6831424BCC46A00F980CF /* Main.storyboard */; };
+		2CF6832D24BCC46A00F980CF /* AKPreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831724BCC46A00F980CF /* AKPreferencesWindow.swift */; };
+		2CF6832E24BCC46A00F980CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831824BCC46A00F980CF /* AppDelegate.swift */; };
+		2CF6832F24BCC46A00F980CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6831924BCC46A00F980CF /* Info.plist */; };
+		2CF6833024BCC46A00F980CF /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831C24BCC46A00F980CF /* AboutView.swift */; };
+		2CF6833124BCC46A00F980CF /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831D24BCC46A00F980CF /* PreferencesView.swift */; };
+		2CF6833224BCC46A00F980CF /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831F24BCC46A00F980CF /* AddDeviceView.swift */; };
+		2CF6833324BCC46A00F980CF /* DevicePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832024BCC46A00F980CF /* DevicePreferences.swift */; };
+		2CF6833424BCC46A00F980CF /* DeviceFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832124BCC46A00F980CF /* DeviceFormView.swift */; };
+		2CF6833524BCC46A00F980CF /* EditDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832224BCC46A00F980CF /* EditDeviceView.swift */; };
+		2CF6833624BCC46A00F980CF /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832324BCC46A00F980CF /* DeviceView.swift */; };
+		2CF6833724BCC46A00F980CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832424BCC46A00F980CF /* ContentView.swift */; };
+		2CF6833A24BCC92D00F980CF /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6833924BCC92D00F980CF /* Defaults.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2CF6830A24BCC46A00F980CF /* WOLDevice+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WOLDevice+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2CF6830C24BCC46A00F980CF /* WOL.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WOL.xcdatamodel; sourceTree = "<group>"; };
+		2CF6830D24BCC46A00F980CF /* WOLDevice+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WOLDevice+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2CF6830E24BCC46A00F980CF /* CDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDManager.swift; sourceTree = "<group>"; };
+		2CF6830F24BCC46A00F980CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2CF6831124BCC46A00F980CF /* Awake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Awake.swift; sourceTree = "<group>"; };
+		2CF6831324BCC46A00F980CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2CF6831524BCC46A00F980CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2CF6831724BCC46A00F980CF /* AKPreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPreferencesWindow.swift; sourceTree = "<group>"; };
+		2CF6831824BCC46A00F980CF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2CF6831924BCC46A00F980CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CF6831C24BCC46A00F980CF /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		2CF6831D24BCC46A00F980CF /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		2CF6831F24BCC46A00F980CF /* AddDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeviceView.swift; sourceTree = "<group>"; };
+		2CF6832024BCC46A00F980CF /* DevicePreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePreferences.swift; sourceTree = "<group>"; };
+		2CF6832124BCC46A00F980CF /* DeviceFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceFormView.swift; sourceTree = "<group>"; };
+		2CF6832224BCC46A00F980CF /* EditDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDeviceView.swift; sourceTree = "<group>"; };
+		2CF6832324BCC46A00F980CF /* DeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		2CF6832424BCC46A00F980CF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2CF6833824BCC52300F980CF /* Wake on Lan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wake on Lan.entitlements"; sourceTree = "<group>"; };
+		2CF6833924BCC92D00F980CF /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		459A278D23AA910B003D50EC /* Wake on Lan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wake on Lan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		459A278A23AA910B003D50EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2CF6830824BCC46A00F980CF /* Wake on Lan */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6830924BCC46A00F980CF /* Core Data */,
+				2CF6830F24BCC46A00F980CF /* Assets.xcassets */,
+				2CF6831124BCC46A00F980CF /* Awake.swift */,
+				2CF6831224BCC46A00F980CF /* Preview Content */,
+				2CF6831424BCC46A00F980CF /* Main.storyboard */,
+				2CF6831624BCC46A00F980CF /* AppKit */,
+				2CF6831A24BCC46A00F980CF /* SwiftUI */,
+				2CF6833824BCC52300F980CF /* Wake on Lan.entitlements */,
+				2CF6831824BCC46A00F980CF /* AppDelegate.swift */,
+				2CF6831924BCC46A00F980CF /* Info.plist */,
+				2CF6833924BCC92D00F980CF /* Defaults.swift */,
+			);
+			path = "Wake on Lan";
+			sourceTree = "<group>";
+		};
+		2CF6830924BCC46A00F980CF /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6830A24BCC46A00F980CF /* WOLDevice+CoreDataProperties.swift */,
+				2CF6830B24BCC46A00F980CF /* WOL.xcdatamodeld */,
+				2CF6830D24BCC46A00F980CF /* WOLDevice+CoreDataClass.swift */,
+				2CF6830E24BCC46A00F980CF /* CDManager.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		2CF6831224BCC46A00F980CF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6831324BCC46A00F980CF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2CF6831624BCC46A00F980CF /* AppKit */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6831724BCC46A00F980CF /* AKPreferencesWindow.swift */,
+			);
+			path = AppKit;
+			sourceTree = "<group>";
+		};
+		2CF6831A24BCC46A00F980CF /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6831B24BCC46A00F980CF /* Preferences */,
+				2CF6832324BCC46A00F980CF /* DeviceView.swift */,
+				2CF6832424BCC46A00F980CF /* ContentView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		2CF6831B24BCC46A00F980CF /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6831C24BCC46A00F980CF /* AboutView.swift */,
+				2CF6831D24BCC46A00F980CF /* PreferencesView.swift */,
+				2CF6831E24BCC46A00F980CF /* Devices */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		2CF6831E24BCC46A00F980CF /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6831F24BCC46A00F980CF /* AddDeviceView.swift */,
+				2CF6832224BCC46A00F980CF /* EditDeviceView.swift */,
+				2CF6832024BCC46A00F980CF /* DevicePreferences.swift */,
+				2CF6832124BCC46A00F980CF /* DeviceFormView.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		459A278423AA910A003D50EC = {
+			isa = PBXGroup;
+			children = (
+				2CF6830824BCC46A00F980CF /* Wake on Lan */,
+				459A278E23AA910B003D50EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		459A278E23AA910B003D50EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				459A278D23AA910B003D50EC /* Wake on Lan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		459A278C23AA910B003D50EC /* Wake on Lan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 459A27A023AA910B003D50EC /* Build configuration list for PBXNativeTarget "Wake on Lan" */;
+			buildPhases = (
+				459A278923AA910B003D50EC /* Sources */,
+				459A278A23AA910B003D50EC /* Frameworks */,
+				459A278B23AA910B003D50EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wake on Lan";
+			productName = WakeOnLan;
+			productReference = 459A278D23AA910B003D50EC /* Wake on Lan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		459A278523AA910A003D50EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = "Iván Moreno";
+				TargetAttributes = {
+					459A278C23AA910B003D50EC = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = 459A278823AA910A003D50EC /* Build configuration list for PBXProject "Wake on Lan" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 459A278423AA910A003D50EC;
+			productRefGroup = 459A278E23AA910B003D50EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				459A278C23AA910B003D50EC /* Wake on Lan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		459A278B23AA910B003D50EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CF6832F24BCC46A00F980CF /* Info.plist in Resources */,
+				2CF6832C24BCC46A00F980CF /* Main.storyboard in Resources */,
+				2CF6832B24BCC46A00F980CF /* Preview Assets.xcassets in Resources */,
+				2CF6832924BCC46A00F980CF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		459A278923AA910B003D50EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CF6833024BCC46A00F980CF /* AboutView.swift in Sources */,
+				2CF6833A24BCC92D00F980CF /* Defaults.swift in Sources */,
+				2CF6832D24BCC46A00F980CF /* AKPreferencesWindow.swift in Sources */,
+				2CF6832A24BCC46A00F980CF /* Awake.swift in Sources */,
+				2CF6832824BCC46A00F980CF /* CDManager.swift in Sources */,
+				2CF6833124BCC46A00F980CF /* PreferencesView.swift in Sources */,
+				2CF6833324BCC46A00F980CF /* DevicePreferences.swift in Sources */,
+				2CF6832624BCC46A00F980CF /* WOL.xcdatamodeld in Sources */,
+				2CF6832E24BCC46A00F980CF /* AppDelegate.swift in Sources */,
+				2CF6832724BCC46A00F980CF /* WOLDevice+CoreDataClass.swift in Sources */,
+				2CF6832524BCC46A00F980CF /* WOLDevice+CoreDataProperties.swift in Sources */,
+				2CF6833624BCC46A00F980CF /* DeviceView.swift in Sources */,
+				2CF6833724BCC46A00F980CF /* ContentView.swift in Sources */,
+				2CF6833524BCC46A00F980CF /* EditDeviceView.swift in Sources */,
+				2CF6833424BCC46A00F980CF /* DeviceFormView.swift in Sources */,
+				2CF6833224BCC46A00F980CF /* AddDeviceView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2CF6831424BCC46A00F980CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CF6831524BCC46A00F980CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		459A279E23AA910B003D50EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		459A279F23AA910B003D50EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		459A27A123AA910B003D50EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Wake on Lan/Wake on Lan.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Wake on Lan/Preview Content\"";
+				DEVELOPMENT_TEAM = V6HSSZ7WYZ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Wake on Lan/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ivanmoreno.WOL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		459A27A223AA910B003D50EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Wake on Lan/Wake on Lan.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Wake on Lan/Preview Content\"";
+				DEVELOPMENT_TEAM = V6HSSZ7WYZ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Wake on Lan/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ivanmoreno.WOL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		459A278823AA910A003D50EC /* Build configuration list for PBXProject "Wake on Lan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				459A279E23AA910B003D50EC /* Debug */,
+				459A279F23AA910B003D50EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		459A27A023AA910B003D50EC /* Build configuration list for PBXNativeTarget "Wake on Lan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				459A27A123AA910B003D50EC /* Debug */,
+				459A27A223AA910B003D50EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2CF6830B24BCC46A00F980CF /* WOL.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2CF6830C24BCC46A00F980CF /* WOL.xcdatamodel */,
+			);
+			currentVersion = 2CF6830C24BCC46A00F980CF /* WOL.xcdatamodel */;
+			path = WOL.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 459A278523AA910A003D50EC /* Project object */;
+}
