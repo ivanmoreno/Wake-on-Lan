@@ -19,8 +19,6 @@ struct DeviceFormView: View {
     @State var confirmAction: () -> Void
     
     var body: some View {
-        
-        private func fie
         Form {
             field("Name", description: "John's PC", text: $name)
             field("MAC", description: "xx:xx:xx:xx:xx:xx", text: $mac)
@@ -38,12 +36,14 @@ struct DeviceFormView: View {
                 .disabled(!canAddNewDevice())
             }
         }
-    }ld(_ label: String, description: String = "", text: Binding<String>) -> some View {
-    HStack {
-    Text(label)
-    Spacer()
-    TextField(description, text: text)
     }
+    
+    private func field(_ label: String, description: String = "", text: Binding<String>) -> some View {
+        HStack {
+            Text(label)
+            Spacer()
+            TextField(description, text: text)
+        }
     }
     
     private func canAddNewDevice() -> Bool{
