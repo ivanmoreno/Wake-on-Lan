@@ -19,7 +19,6 @@
 		2CF6832E24BCC46A00F980CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831824BCC46A00F980CF /* AppDelegate.swift */; };
 		2CF6832F24BCC46A00F980CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6831924BCC46A00F980CF /* Info.plist */; };
 		2CF6833024BCC46A00F980CF /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831C24BCC46A00F980CF /* AboutView.swift */; };
-		2CF6833124BCC46A00F980CF /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831D24BCC46A00F980CF /* PreferencesView.swift */; };
 		2CF6833224BCC46A00F980CF /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831F24BCC46A00F980CF /* AddDeviceView.swift */; };
 		2CF6833324BCC46A00F980CF /* DevicePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832024BCC46A00F980CF /* DevicePreferences.swift */; };
 		2CF6833424BCC46A00F980CF /* DeviceFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6832124BCC46A00F980CF /* DeviceFormView.swift */; };
@@ -41,7 +40,6 @@
 		2CF6831824BCC46A00F980CF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CF6831924BCC46A00F980CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CF6831C24BCC46A00F980CF /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		2CF6831D24BCC46A00F980CF /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		2CF6831F24BCC46A00F980CF /* AddDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeviceView.swift; sourceTree = "<group>"; };
 		2CF6832024BCC46A00F980CF /* DevicePreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePreferences.swift; sourceTree = "<group>"; };
 		2CF6832124BCC46A00F980CF /* DeviceFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceFormView.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				2CF6831C24BCC46A00F980CF /* AboutView.swift */,
-				2CF6831D24BCC46A00F980CF /* PreferencesView.swift */,
 				2CF6831E24BCC46A00F980CF /* Devices */,
 			);
 			path = Preferences;
@@ -230,7 +227,6 @@
 				2CF6833A24BCC92D00F980CF /* Defaults.swift in Sources */,
 				2CF6832A24BCC46A00F980CF /* Awake.swift in Sources */,
 				2CF6832824BCC46A00F980CF /* CDManager.swift in Sources */,
-				2CF6833124BCC46A00F980CF /* PreferencesView.swift in Sources */,
 				2CF6833324BCC46A00F980CF /* DevicePreferences.swift in Sources */,
 				2CF6832624BCC46A00F980CF /* WOL.xcdatamodeld in Sources */,
 				2CF6832E24BCC46A00F980CF /* AppDelegate.swift in Sources */,

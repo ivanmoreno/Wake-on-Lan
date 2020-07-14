@@ -17,7 +17,11 @@ class AKPreferencesWindow : NSWindow {
     let moc = (NSApplication.shared.delegate as! AppDelegate).moc!
     
     init() {
-        let frame = NSRect(x: 0, y: 0, width: 500, height: 300)
+        let frame = NSRect(x: 0,
+                           y: 0,
+                           width: Defaults.preferencesWindowWidth,
+                           height: Defaults.preferencesWindowHeight)
+        
         let styleMask: NSWindow.StyleMask = [.titled, .closable]
         super.init(contentRect: frame, styleMask: styleMask, backing: .buffered, defer: false)
         

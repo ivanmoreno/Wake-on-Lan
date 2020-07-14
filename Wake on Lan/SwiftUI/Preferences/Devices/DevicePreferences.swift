@@ -17,7 +17,6 @@ struct DevicePreferences: View {
         var id: String {
             rawValue
         }
-        
         case none, add, edit
     }
     
@@ -30,15 +29,15 @@ struct DevicePreferences: View {
     
     var body: some View {
         contentView
-            .frame(width: 500, height: 300)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .frame(width: Defaults.preferencesWindowWidth,
+                   height: Defaults.preferencesWindowHeight)
             .padding()
     }
     
     @ViewBuilder
     private var contentView: some View {
-        VStack {
-            HStack {
+        HStack(alignment: .top) {
+            VStack {
                 Button("New"){
                     presentSheet(.add)
                 }
@@ -46,7 +45,7 @@ struct DevicePreferences: View {
                 Button("Edit"){
                     presentSheet(.edit)
                 }.disabled(selection.count != 1 || devices.isEmpty)
-
+                
                 Button("Delete"){
                     showDeleteAlert.toggle()
                 }
@@ -67,15 +66,13 @@ struct DevicePreferences: View {
                 }
             }
             .sheet(item: $activeSheet) { sheet in
-                Group {
-                    if sheet == .add {
-                        AddDeviceView(showAddDeviceView: $activeSheet)
-                            .frame(width: 350)
-                    }
-                    if sheet == .edit {
-                        EditDeviceView(showEditDeviceView: $activeSheet, device: devices[selection.first!])
-                            .frame(width: 350)
-                    }
+                if sheet == .add {
+                    AddDeviceView(showAddDeviceView: $activeSheet)
+                        .frame(width: 350)
+                }
+                if sheet == .edit {
+                    EditDeviceView(showEditDeviceView: $activeSheet, device: devices[selection.first!])
+                        .frame(width: 350)
                 }
             }
             
