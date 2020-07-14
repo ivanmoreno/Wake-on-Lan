@@ -130,10 +130,10 @@
 		2CF6831E24BCC46A00F980CF /* Devices */ = {
 			isa = PBXGroup;
 			children = (
+				2CF6832124BCC46A00F980CF /* DeviceFormView.swift */,
 				2CF6831F24BCC46A00F980CF /* AddDeviceView.swift */,
 				2CF6832224BCC46A00F980CF /* EditDeviceView.swift */,
 				2CF6832024BCC46A00F980CF /* DevicePreferences.swift */,
-				2CF6832124BCC46A00F980CF /* DeviceFormView.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";

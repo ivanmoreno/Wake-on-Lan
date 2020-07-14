@@ -31,6 +31,7 @@ struct AddDeviceView: View {
             )
             Spacer()
         }
+        .padding()
     }
     
     private func cancelDeviceCreation() {

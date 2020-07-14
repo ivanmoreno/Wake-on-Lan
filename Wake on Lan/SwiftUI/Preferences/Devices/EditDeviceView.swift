@@ -28,6 +28,7 @@ struct EditDeviceView: View {
             )
             Spacer()
         }
+        .padding()
     }
     
     private func saveEdit(){

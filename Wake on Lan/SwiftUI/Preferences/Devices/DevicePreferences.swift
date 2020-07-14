@@ -10,8 +10,12 @@ import SwiftUI
 struct DevicePreferences: View {
     
     @State var selection: Set<Int> = [0]
-    @State var showAddNew = false
-    @State var showEdit = false
+    @State var showSheet = false
+    @State var sheet = Sheet.add
+    
+    enum Sheet {
+        case add, edit
+    }
     
     @FetchRequest(
         entity: WOLDevice.entity(),
@@ -29,26 +33,12 @@ struct DevicePreferences: View {
     
     @ViewBuilder
     private var contentView: some View {
-        if showAddNew {
-            AddDeviceView(showAddDeviceView: $showAddNew)
-        }
-        
-        if showEdit {
-            EditDeviceView(showEditDeviceView: $showEdit, device: devices[selection.first!])
-        }
-        
-        if !showEdit && !showAddNew {
-            list
-        }
-    }
-    
-    private var list: some View {
         VStack {
             HStack {
-                Button(action: {showAddNew.toggle()}){
+                Button(action: {presentSheet(.add)}){
                     Text("New")
                 }
-                Button(action: {showEdit.toggle()}){
+                Button(action: {presentSheet(.edit)}){
                     Text("Edit")
                 }.disabled(selection.count != 1 || devices.isEmpty)
                 Button(action: deleteDevices){
@@ -61,10 +51,24 @@ struct DevicePreferences: View {
                         .tag(index)
                 }
             }
+            .sheet(isPresented: $showSheet) {
+                if sheet == .add {
+                    AddDeviceView(showAddDeviceView: $showSheet)
+                        .frame(width: 350)
+                }
+                if sheet == .edit {
+                    EditDeviceView(showEditDeviceView: $showSheet, device: devices[selection.first!])
+                        .frame(width: 350)
+                }
+            }
             
         }
-        .padding(.leading)
-        .padding(.trailing)
+    }
+    
+    private func presentSheet(_ sheet: Sheet){
+        self.sheet = sheet
+        showSheet = true
+        
     }
     
     private func deleteDevices() {

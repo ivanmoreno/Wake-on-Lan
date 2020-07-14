@@ -19,31 +19,31 @@ struct DeviceFormView: View {
     @State var confirmAction: () -> Void
     
     var body: some View {
+        
+        private func fie
         Form {
-            field("Name", text: $name)
-            field("MAC Address", text: $mac)
-            field("Broadcast Address", text: $broadcast)
-            field("Port", text: $port)
+            field("Name", description: "John's PC", text: $name)
+            field("MAC", description: "xx:xx:xx:xx:xx:xx", text: $mac)
+            field("Broadcast", description: "255.255.255.255", text: $broadcast)
+            field("Port", description: "If you're not sure: 9", text: $port)
             
             HStack(alignment:.center) {
                 Button(action:cancelAction){
                     Text("Cancel")
                 }
+                Spacer()
                 Button(action:confirmAction){
                     Text(confirmLabel)
                 }
                 .disabled(!canAddNewDevice())
             }
         }
+    }ld(_ label: String, description: String = "", text: Binding<String>) -> some View {
+    HStack {
+    Text(label)
+    Spacer()
+    TextField(description, text: text)
     }
-    
-    private func field(_ label: String, description: String = "", text: Binding<String>) -> some View {
-        HStack {
-            Text(label)
-            Spacer()
-            TextField(label, text: text)
-            Spacer()
-        }
     }
     
     private func canAddNewDevice() -> Bool{
