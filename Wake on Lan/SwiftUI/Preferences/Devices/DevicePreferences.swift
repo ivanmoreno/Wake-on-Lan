@@ -38,16 +38,22 @@ struct DevicePreferences: View {
     private var contentView: some View {
         HStack(alignment: .top) {
             VStack {
-                Button("New"){
-                    presentSheet(.add)
+                Button(action: {presentSheet(.add)}) {
+                    Text("New")
+                        .frame(minWidth: 50,
+                               maxWidth: .infinity)
                 }
                 
-                Button("Edit"){
-                    presentSheet(.edit)
-                }.disabled(selection.count != 1 || devices.isEmpty)
+                Button(action: {presentSheet(.edit)}) {
+                    Text("Edit")
+                        .frame(minWidth: 50,
+                               maxWidth: .infinity)
+                }
                 
-                Button("Delete"){
-                    showDeleteAlert.toggle()
+                Button(action: {showDeleteAlert.toggle()}) {
+                    Text("Delete")
+                        .frame(minWidth: 50,
+                               maxWidth: .infinity)
                 }
                 .alert(isPresented:$showDeleteAlert) {
                     Alert(
