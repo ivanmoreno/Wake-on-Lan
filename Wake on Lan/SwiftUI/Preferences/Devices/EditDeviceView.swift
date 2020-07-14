@@ -27,7 +27,7 @@ struct EditDeviceView: View {
                 mac: $device.mac,
                 broadcast: $device.broadcast,
                 port: $device.port,
-                cancelAction: cancelEdit,
+                cancelAction: exitEditDeviceForm,
                 confirmLabel: "Save",
                 confirmAction: saveEdit
             )
@@ -44,11 +44,11 @@ struct EditDeviceView: View {
             broadcast: device.broadcast,
             port: device.port
         )
-        showEditDeviceView.toggle()
+        exitEditDeviceForm()
     }
     
-    private func cancelEdit(){
-        showEditDeviceView.toggle()
+    private func exitEditDeviceForm(){
+        showEditDeviceView = false
     }
     
     private func canAddNewDevice() -> Bool{

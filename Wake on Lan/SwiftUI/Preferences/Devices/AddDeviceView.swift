@@ -30,7 +30,7 @@ struct AddDeviceView: View {
                 mac: $mac,
                 broadcast: $broadcast,
                 port: $port,
-                cancelAction: cancelDeviceCreation,
+                cancelAction: exitDeviceFormCreation,
                 confirmLabel: "Add",
                 confirmAction: addDevice
             )
@@ -39,15 +39,15 @@ struct AddDeviceView: View {
         .padding()
     }
     
-    private func cancelDeviceCreation() {
-        showAddDeviceView.toggle()
+    private func exitDeviceFormCreation() {
+        showAddDeviceView = false
     }
     
     private func addDevice() {
         // create new device
         CDManager.shared.addDevice(name: name, mac: mac, broadcast: broadcast, port: port)
         // exit form
-        showAddDeviceView.toggle()
+        exitDeviceFormCreation()
     }
     
     private func canAddNewDevice() -> Bool{
