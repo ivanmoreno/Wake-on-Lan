@@ -10,12 +10,15 @@ import SwiftUI
 struct DevicePreferences: View {
     
     @State var selection: Set<Int> = [0]
-    @State var showSheet = false
-    @State var activeSheet = Sheet.edit
+    @State var activeSheet: Sheet? = nil
     @State var showDeleteAlert = false
     
-    enum Sheet {
-        case add, edit
+    enum Sheet: String, Identifiable {
+        var id: String {
+            rawValue
+        }
+        
+        case none, add, edit
     }
     
     @FetchRequest(
@@ -43,7 +46,7 @@ struct DevicePreferences: View {
                 Button("Edit"){
                     presentSheet(.edit)
                 }.disabled(selection.count != 1 || devices.isEmpty)
-                
+
                 Button("Delete"){
                     showDeleteAlert.toggle()
                 }
@@ -63,16 +66,19 @@ struct DevicePreferences: View {
                         .tag(index)
                 }
             }
-            .sheet(isPresented: $showSheet) {
-                if activeSheet == .add {
-                    AddDeviceView(showAddDeviceView: $showSheet)
-                        .frame(width: 350)
-                }
-                if activeSheet == .edit {
-                    EditDeviceView(showEditDeviceView: $showSheet, device: devices[selection.first!])
-                        .frame(width: 350)
+            .sheet(item: $activeSheet) { sheet in
+                Group {
+                    if sheet == .add {
+                        AddDeviceView(showAddDeviceView: $activeSheet)
+                            .frame(width: 350)
+                    }
+                    if sheet == .edit {
+                        EditDeviceView(showEditDeviceView: $activeSheet, device: devices[selection.first!])
+                            .frame(width: 350)
+                    }
                 }
             }
+            
             
         }
     }
@@ -88,7 +94,5 @@ struct DevicePreferences: View {
     
     private func presentSheet(_ sheet: Sheet){
         self.activeSheet = sheet
-        showSheet = true
-        
     }
 }

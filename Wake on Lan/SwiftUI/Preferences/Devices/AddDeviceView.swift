@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddDeviceView: View {
     
-    @Binding var showAddDeviceView: Bool
+    @Binding var showAddDeviceView: DevicePreferences.Sheet?
     
     @State private var name = ""
     @State private var mac = ""
@@ -40,7 +40,7 @@ struct AddDeviceView: View {
     }
     
     private func exitDeviceFormCreation() {
-        showAddDeviceView = false
+        showAddDeviceView = nil
     }
     
     private func addDevice() {

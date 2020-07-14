@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditDeviceView: View {
     
-    @Binding var showEditDeviceView: Bool
+    @Binding var showEditDeviceView: DevicePreferences.Sheet?
     
     @ObservedObject var device: WOLDevice
     
@@ -48,7 +48,7 @@ struct EditDeviceView: View {
     }
     
     private func exitEditDeviceForm(){
-        showEditDeviceView = false
+        showEditDeviceView = nil
     }
     
     private func canAddNewDevice() -> Bool{
