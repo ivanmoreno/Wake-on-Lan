@@ -11,13 +11,14 @@ import CoreData
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    var statusBarItem: NSStatusItem!
-    let statusBarMenu = NSMenu(title: "Status Bar Menu")
+    private var statusBarItem: NSStatusItem!
+    private let statusBarMenu = NSMenu(title: "Status Bar Menu")
     
     var moc: NSManagedObjectContext!
-    var controller: NSFetchedResultsController<WOLDevice>!
+    private var fetchedResultsController: NSFetchedResultsController<WOLDevice>!
+    private var coreDataCancellable: NSObjectProtocol?
     
-    var notificationToken: NSObjectProtocol?
+    private lazy var preferencesWindow: NSWindow = AKPreferencesWindow()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
@@ -42,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         // Core Data Controller
-        controller = NSFetchedResultsController(
+        fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: moc,
             sectionNameKeyPath: nil,
@@ -53,14 +54,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         fetchAndUpdate()
         
         // Suscribe to Core Data changes when Context saves changes
-        notificationToken = NotificationCenter.default
+        coreDataCancellable = NotificationCenter.default
             .addObserver(forName: .NSManagedObjectContextDidSave,
                          object: nil,
                          queue: nil) { _ in
                 self.fetchAndUpdate()
             }
         
-        NSApp.activate(ignoringOtherApps: true)
     }
     
 }
@@ -91,8 +91,8 @@ extension AppDelegate {
     
     func fetchAndUpdate(){
         do {
-            try controller.performFetch()
-            let wolDevices = (controller.fetchedObjects ?? [])
+            try fetchedResultsController.performFetch()
+            let wolDevices = (fetchedResultsController.fetchedObjects ?? [])
             fillMenu(with: wolDevices)
         } catch {
             fatalError("Failed to fetch entities: \(error)")
@@ -103,9 +103,9 @@ extension AppDelegate {
 // MARK: - Selectors
 extension AppDelegate {
     @objc func openPreferences(_ sender: AnyObject?){
-        let window = AKPreferencesWindow()
-        window.makeKeyAndOrderFront(nil)
-        window.isReleasedWhenClosed = false
+        NSApp.activate(ignoringOtherApps: true)
+        preferencesWindow.makeKeyAndOrderFront(nil)
+        preferencesWindow.isReleasedWhenClosed = false
     }
     
     @objc func quitApp(_ sender: AnyObject?){

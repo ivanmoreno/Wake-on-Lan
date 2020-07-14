@@ -24,8 +24,8 @@ class AKPreferencesWindow : NSWindow {
         
         contentView = NSHostingView(rootView: PreferencesView().environment(\.managedObjectContext, appDelegate.moc))
         
-        title = "Wake on Lan"
-        subtitle = "Preferences"
+        subtitle = "Wake on Lan"
+        title = "Preferences"
         
         let newToolbar = NSToolbar(identifier: self.mainWindowToolbarIdentifier)
         newToolbar.displayMode = .default
