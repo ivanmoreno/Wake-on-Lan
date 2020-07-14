@@ -13,6 +13,11 @@ struct EditDeviceView: View {
     
     @ObservedObject var device: WOLDevice
     
+    @State var name: String
+    @State var mac: String
+    @State var broadcast: String
+    @State var port: String
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -23,10 +28,10 @@ struct EditDeviceView: View {
                     .font(.title)
             }
             DeviceFormView(
-                name: $device.name,
-                mac: $device.mac,
-                broadcast: $device.broadcast,
-                port: $device.port,
+                name: $name,
+                mac: $mac,
+                broadcast: $broadcast,
+                port: $port,
                 cancelAction: exitEditDeviceForm,
                 confirmLabel: "Save",
                 confirmAction: saveEdit
@@ -39,10 +44,10 @@ struct EditDeviceView: View {
     private func saveEdit(){
         CDManager.shared.editDevice(
             device:device,
-            name: device.name,
-            mac: device.mac,
-            broadcast: device.broadcast,
-            port: device.port
+            name: name,
+            mac: mac,
+            broadcast: broadcast,
+            port: port
         )
         exitEditDeviceForm()
     }

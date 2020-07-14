@@ -65,14 +65,23 @@ struct DevicePreferences: View {
                         .tag(index)
                 }
             }
+            .cornerRadius(8)
             .sheet(item: $activeSheet) { sheet in
                 if sheet == .add {
                     AddDeviceView(showAddDeviceView: $activeSheet)
-                        .frame(width: 350)
+                        .frame(width: Defaults.preferencesWindowWidth)
                 }
                 if sheet == .edit {
-                    EditDeviceView(showEditDeviceView: $activeSheet, device: devices[selection.first!])
-                        .frame(width: 350)
+                    let device = devices[selection.first!]
+                    EditDeviceView(
+                        showEditDeviceView: $activeSheet,
+                        device: device,
+                        name: device.name,
+                        mac: device.mac,
+                        broadcast: device.broadcast,
+                        port: device.port
+                    )
+                    .frame(width: Defaults.preferencesWindowWidth)
                 }
             }
             
