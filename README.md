@@ -19,4 +19,4 @@ A menu bar app for sending WOL to your local devices.
 
 # Acknowledgements
 - [Jesper Lindberg (@lindbergjesper) for Awake (library used to send WOL packet)](https://github.com/jesper-lindberg/Awake)
-- [Aaron Wright for his post on how to wrap SwiftUI in a menu bar app](https://medium.com/infinite-token/creating-a-macos-menu-bar-application-using-swiftui-54572a5d5f87)
+- [Mario Guzman for his NSToolbar example](https://github.com/marioaguzman/toolbar)

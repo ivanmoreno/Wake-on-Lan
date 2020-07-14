@@ -12,7 +12,7 @@ struct AboutView: View {
         VStack {
             Text("Made with ❤️ in Murcia")
         }
-        .frame(width: 600, height: 300)
+        .frame(width: 500, height: 300)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.leading)
         .padding(.trailing)

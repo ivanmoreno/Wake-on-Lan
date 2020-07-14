@@ -10,26 +10,132 @@ import SwiftUI
 
 class AKPreferencesWindow : NSWindow {
     
-    let mainWindowToolbarIdentifier = NSToolbar.Identifier("PreferencesWindowToolbar")
+    let preferencesWindowToolbarIdentifier = NSToolbar.Identifier("PreferencesWindowToolbar")
+    
+    let toolbarItemDevices = NSToolbarItem.Identifier("ToolbarDevicesItem")
+    let toolbarItemAbout = NSToolbarItem.Identifier("ToolbarAboutItem")
+    
+    let moc = (NSApplication.shared.delegate as! AppDelegate).moc!
     
     init() {
-        let frame = NSRect(x: 20, y: 20, width: 600, height: 300)
-        let styleMask: NSWindow.StyleMask = [.titled, .closable]
+        let frame = NSRect(x: 0, y: 0, width: 500, height: 300)
+        let styleMask: NSWindow.StyleMask = [.titled, .closable, .unifiedTitleAndToolbar]
         super.init(contentRect: frame, styleMask: styleMask, backing: .buffered, defer: false)
         
         center()
         setFrameAutosaveName("Preferences")
         
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        
-        contentView = NSHostingView(rootView: PreferencesView().environment(\.managedObjectContext, appDelegate.moc))
-        
-        subtitle = "Wake on Lan"
-        title = "Preferences"
-        
-        let newToolbar = NSToolbar(identifier: self.mainWindowToolbarIdentifier)
+        let newToolbar = NSToolbar(identifier: self.preferencesWindowToolbarIdentifier)
+        newToolbar.delegate = self
         newToolbar.displayMode = .default
+        
+        title = "Preferences"
+        if #available(OSX 10.16, *) {
+            toolbarStyle = .automatic
+            subtitle = "Wake on Lan"
+            
+        }
+        
         toolbar = newToolbar
+        toolbar?.selectedItemIdentifier = toolbarItemDevices
+        toolbar?.validateVisibleItems()
+        
+        changePreferencePanel(NSToolbarItem(itemIdentifier: toolbarItemDevices))
     }
     
+    @objc func changePreferencePanel(_ sender:Any){
+        if let toolbarItem = sender as? NSToolbarItem {
+            
+            if toolbarItemDevices == toolbarItem.itemIdentifier {
+                contentView = NSHostingView(rootView: DevicePreferences().environment(\.managedObjectContext, moc))
+            }
+            
+            if toolbarItemAbout == toolbarItem.itemIdentifier {
+                contentView = NSHostingView(rootView: AboutView())
+            }
+            
+        }
+    }
+    
+}
+
+extension AKPreferencesWindow: NSToolbarDelegate {
+    func toolbar(_ toolbar: NSToolbar,
+                 itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier,
+                 willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem?
+    {
+        if  itemIdentifier == self.toolbarItemDevices {
+            let toolbarItem = NSToolbarItem(itemIdentifier: itemIdentifier)
+            toolbarItem.target = self
+            toolbarItem.action = #selector(changePreferencePanel(_:))
+            toolbarItem.label = "Devices"
+            toolbarItem.paletteLabel = "Devics"
+            toolbarItem.toolTip = "Open Devices panel"
+            if #available(OSX 10.16, *) {
+                toolbarItem.image = NSImage(systemSymbolName: "pc", accessibilityDescription: "")
+                toolbarItem.isBordered = true
+            } else {
+                toolbarItem.image = NSImage(systemSymbolName: "pc", accessibilityDescription: "")
+            }
+            return toolbarItem
+        }
+        
+        if  itemIdentifier == self.toolbarItemAbout {
+            let toolbarItem = NSToolbarItem(itemIdentifier: itemIdentifier)
+            toolbarItem.target = self
+            toolbarItem.action = #selector(changePreferencePanel(_:))
+            toolbarItem.label = "About"
+            toolbarItem.paletteLabel = "About"
+            toolbarItem.toolTip = "Open About panel"
+            if #available(OSX 10.16, *) {
+                toolbarItem.image = NSImage(systemSymbolName: "info.circle", accessibilityDescription: "")
+                toolbarItem.isBordered = true
+            } else {
+                toolbarItem.image = NSImage(named: NSImage.advancedName)
+            }
+            return toolbarItem
+        }
+        
+        return nil
+    }
+    
+    func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier]
+    {
+        return [
+            self.toolbarItemDevices,
+            self.toolbarItemAbout,
+            NSToolbarItem.Identifier.space,
+        ]
+    }
+    
+    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier]
+    {
+        return [self.toolbarItemDevices,
+                self.toolbarItemAbout,
+                NSToolbarItem.Identifier.space,
+        ]
+    }
+    
+    func toolbarSelectableItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier]
+    {
+        // Return the identifiers you'd like to show as "selected" when clicked.
+        // Similar to how they look in typical Preferences windows.
+        return [self.toolbarItemDevices,
+                self.toolbarItemAbout,
+        ]
+    }
+    
+    // MARK: - Toolbar Validation
+    func validateToolbarItem(_ item: NSToolbarItem) -> Bool
+    {
+        // let itemIdentifier = item.itemIdentifier
+        // print("Validating \(itemIdentifier)")
+        
+        // Use this method to enable/disable toolbar items as user takes certain
+        // actions. For example, so items may not be applicable if a certain UI
+        // element is selected. This is called on your behalf. Return false if
+        // the toolbar item needs to be disabled.
+        
+        return true
+    }
 }

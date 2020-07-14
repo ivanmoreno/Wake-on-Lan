@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C9A2E6624BE11B1004BFEE8 /* AKPreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A2E6524BE11B1004BFEE8 /* AKPreferencesWindow.swift */; };
 		2CF6832524BCC46A00F980CF /* WOLDevice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6830A24BCC46A00F980CF /* WOLDevice+CoreDataProperties.swift */; };
 		2CF6832624BCC46A00F980CF /* WOL.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6830B24BCC46A00F980CF /* WOL.xcdatamodeld */; };
 		2CF6832724BCC46A00F980CF /* WOLDevice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6830D24BCC46A00F980CF /* WOLDevice+CoreDataClass.swift */; };
@@ -15,7 +16,6 @@
 		2CF6832A24BCC46A00F980CF /* Awake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831124BCC46A00F980CF /* Awake.swift */; };
 		2CF6832B24BCC46A00F980CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6831324BCC46A00F980CF /* Preview Assets.xcassets */; };
 		2CF6832C24BCC46A00F980CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6831424BCC46A00F980CF /* Main.storyboard */; };
-		2CF6832D24BCC46A00F980CF /* AKPreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831724BCC46A00F980CF /* AKPreferencesWindow.swift */; };
 		2CF6832E24BCC46A00F980CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831824BCC46A00F980CF /* AppDelegate.swift */; };
 		2CF6832F24BCC46A00F980CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6831924BCC46A00F980CF /* Info.plist */; };
 		2CF6833024BCC46A00F980CF /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6831C24BCC46A00F980CF /* AboutView.swift */; };
@@ -29,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C9A2E6524BE11B1004BFEE8 /* AKPreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPreferencesWindow.swift; sourceTree = "<group>"; };
 		2CF6830A24BCC46A00F980CF /* WOLDevice+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WOLDevice+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2CF6830C24BCC46A00F980CF /* WOL.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WOL.xcdatamodel; sourceTree = "<group>"; };
 		2CF6830D24BCC46A00F980CF /* WOLDevice+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WOLDevice+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		2CF6831124BCC46A00F980CF /* Awake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Awake.swift; sourceTree = "<group>"; };
 		2CF6831324BCC46A00F980CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CF6831524BCC46A00F980CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2CF6831724BCC46A00F980CF /* AKPreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPreferencesWindow.swift; sourceTree = "<group>"; };
 		2CF6831824BCC46A00F980CF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CF6831924BCC46A00F980CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CF6831C24BCC46A00F980CF /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		2CF6831624BCC46A00F980CF /* AppKit */ = {
 			isa = PBXGroup;
 			children = (
-				2CF6831724BCC46A00F980CF /* AKPreferencesWindow.swift */,
+				2C9A2E6524BE11B1004BFEE8 /* AKPreferencesWindow.swift */,
 			);
 			path = AppKit;
 			sourceTree = "<group>";
@@ -228,7 +228,6 @@
 			files = (
 				2CF6833024BCC46A00F980CF /* AboutView.swift in Sources */,
 				2CF6833A24BCC92D00F980CF /* Defaults.swift in Sources */,
-				2CF6832D24BCC46A00F980CF /* AKPreferencesWindow.swift in Sources */,
 				2CF6832A24BCC46A00F980CF /* Awake.swift in Sources */,
 				2CF6832824BCC46A00F980CF /* CDManager.swift in Sources */,
 				2CF6833124BCC46A00F980CF /* PreferencesView.swift in Sources */,
@@ -236,6 +235,7 @@
 				2CF6832624BCC46A00F980CF /* WOL.xcdatamodeld in Sources */,
 				2CF6832E24BCC46A00F980CF /* AppDelegate.swift in Sources */,
 				2CF6832724BCC46A00F980CF /* WOLDevice+CoreDataClass.swift in Sources */,
+				2C9A2E6624BE11B1004BFEE8 /* AKPreferencesWindow.swift in Sources */,
 				2CF6832524BCC46A00F980CF /* WOLDevice+CoreDataProperties.swift in Sources */,
 				2CF6833624BCC46A00F980CF /* DeviceView.swift in Sources */,
 				2CF6833524BCC46A00F980CF /* EditDeviceView.swift in Sources */,

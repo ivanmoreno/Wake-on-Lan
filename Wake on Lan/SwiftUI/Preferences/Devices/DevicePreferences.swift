@@ -22,7 +22,7 @@ struct DevicePreferences: View {
     
     var body: some View {
         contentView
-            .frame(width: 600, height: 300)
+            .frame(width: 500, height: 300)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.leading)
             .padding(.trailing)

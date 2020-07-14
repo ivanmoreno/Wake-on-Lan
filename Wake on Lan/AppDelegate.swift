@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var fetchedResultsController: NSFetchedResultsController<WOLDevice>!
     private var coreDataCancellable: NSObjectProtocol?
     
-    private lazy var preferencesWindow: NSWindow = AKPreferencesWindow()
+    private lazy var preferencesWindow = AKPreferencesWindow()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
@@ -92,7 +92,7 @@ extension AppDelegate {
     func fetchAndUpdate(){
         do {
             try fetchedResultsController.performFetch()
-            let wolDevices = (fetchedResultsController.fetchedObjects ?? [])
+            let wolDevices = fetchedResultsController.fetchedObjects ?? []
             fillMenu(with: wolDevices)
         } catch {
             fatalError("Failed to fetch entities: \(error)")
