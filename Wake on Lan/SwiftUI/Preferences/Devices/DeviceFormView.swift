@@ -41,6 +41,7 @@ struct DeviceFormView: View {
     private func field(_ label: String, description: String = "", text: Binding<String>) -> some View {
         HStack {
             Text(label)
+                .frame(minWidth: 100)
             Spacer()
             TextField(description, text: text)
         }

@@ -17,9 +17,14 @@ struct AddDeviceView: View {
     @State private var port = Defaults.devicePort
     
     var body: some View {
-        VStack {
-            Text("Add device")
-                .font(.headline)
+        VStack(alignment: .leading) {
+            HStack {
+                Image(systemName: "plus.circle")
+                    .font(.title)
+                Text("Add device")
+                    .padding(.leading, 10)
+                    .font(.title)
+            }
             DeviceFormView(
                 name: $name,
                 mac: $mac,
@@ -41,11 +46,6 @@ struct AddDeviceView: View {
     private func addDevice() {
         // create new device
         CDManager.shared.addDevice(name: name, mac: mac, broadcast: broadcast, port: port)
-        // reset form
-        name = ""
-        mac = ""
-        broadcast = Defaults.deviceBroadcast
-        port = Defaults.devicePort
         // exit form
         showAddDeviceView.toggle()
     }

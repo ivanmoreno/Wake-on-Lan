@@ -14,9 +14,14 @@ struct EditDeviceView: View {
     @ObservedObject var device: WOLDevice
     
     var body: some View {
-        VStack {
-            Text("Edit device")
-                .font(.headline)
+        VStack(alignment: .leading) {
+            HStack {
+                Image(systemName: "pc")
+                    .font(.title)
+                Text("Edit device")
+                    .padding(.leading, 10)
+                    .font(.title)
+            }
             DeviceFormView(
                 name: $device.name,
                 mac: $device.mac,
