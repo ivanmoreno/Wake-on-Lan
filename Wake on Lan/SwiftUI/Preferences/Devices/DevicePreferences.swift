@@ -24,8 +24,7 @@ struct DevicePreferences: View {
         contentView
             .frame(width: 500, height: 300)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.leading)
-            .padding(.trailing)
+            .padding()
     }
     
     @ViewBuilder

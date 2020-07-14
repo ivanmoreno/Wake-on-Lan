@@ -11,7 +11,6 @@ import SwiftUI
 class AKPreferencesWindow : NSWindow {
     
     let preferencesWindowToolbarIdentifier = NSToolbar.Identifier("PreferencesWindowToolbar")
-    
     let toolbarItemDevices = NSToolbarItem.Identifier("ToolbarDevicesItem")
     let toolbarItemAbout = NSToolbarItem.Identifier("ToolbarAboutItem")
     
@@ -19,21 +18,19 @@ class AKPreferencesWindow : NSWindow {
     
     init() {
         let frame = NSRect(x: 0, y: 0, width: 500, height: 300)
-        let styleMask: NSWindow.StyleMask = [.titled, .closable, .unifiedTitleAndToolbar]
+        let styleMask: NSWindow.StyleMask = [.titled, .closable]
         super.init(contentRect: frame, styleMask: styleMask, backing: .buffered, defer: false)
         
-        center()
         setFrameAutosaveName("Preferences")
         
         let newToolbar = NSToolbar(identifier: self.preferencesWindowToolbarIdentifier)
         newToolbar.delegate = self
         newToolbar.displayMode = .default
         
-        title = "Preferences"
+        title = "Wake on Lan"
         if #available(OSX 10.16, *) {
-            toolbarStyle = .automatic
-            subtitle = "Wake on Lan"
-            
+            toolbarStyle = .preference
+            subtitle = "Preferences"
         }
         
         toolbar = newToolbar
@@ -69,14 +66,14 @@ extension AKPreferencesWindow: NSToolbarDelegate {
             toolbarItem.target = self
             toolbarItem.action = #selector(changePreferencePanel(_:))
             toolbarItem.label = "Devices"
-            toolbarItem.paletteLabel = "Devics"
             toolbarItem.toolTip = "Open Devices panel"
             if #available(OSX 10.16, *) {
                 toolbarItem.image = NSImage(systemSymbolName: "pc", accessibilityDescription: "")
                 toolbarItem.isBordered = true
-            } else {
-                toolbarItem.image = NSImage(systemSymbolName: "pc", accessibilityDescription: "")
+            }else {
+                toolbarItem.image = NSImage(named: NSImage.bonjourName)
             }
+            
             return toolbarItem
         }
         
@@ -85,17 +82,16 @@ extension AKPreferencesWindow: NSToolbarDelegate {
             toolbarItem.target = self
             toolbarItem.action = #selector(changePreferencePanel(_:))
             toolbarItem.label = "About"
-            toolbarItem.paletteLabel = "About"
             toolbarItem.toolTip = "Open About panel"
             if #available(OSX 10.16, *) {
                 toolbarItem.image = NSImage(systemSymbolName: "info.circle", accessibilityDescription: "")
                 toolbarItem.isBordered = true
-            } else {
-                toolbarItem.image = NSImage(named: NSImage.advancedName)
+            }else {
+                toolbarItem.image = NSImage(named: NSImage.bonjourName)
             }
+            
             return toolbarItem
         }
-        
         return nil
     }
     
@@ -104,7 +100,6 @@ extension AKPreferencesWindow: NSToolbarDelegate {
         return [
             self.toolbarItemDevices,
             self.toolbarItemAbout,
-            NSToolbarItem.Identifier.space,
         ]
     }
     
@@ -112,7 +107,6 @@ extension AKPreferencesWindow: NSToolbarDelegate {
     {
         return [self.toolbarItemDevices,
                 self.toolbarItemAbout,
-                NSToolbarItem.Identifier.space,
         ]
     }
     
