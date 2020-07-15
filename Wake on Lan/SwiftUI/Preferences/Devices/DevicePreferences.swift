@@ -38,12 +38,20 @@ struct DevicePreferences: View {
     private var contentView: some View {
         HStack(alignment: .top) {
             VStack {
-                Button(action: {presentSheet(.add)}) {
-                    Text("New")
-                        .frame(minWidth: 50,
-                               maxWidth: .infinity)
+                if #available(OSX 10.16, *) {
+                    Button(action: {presentSheet(.add)}) {
+                        Text("New")
+                            .frame(minWidth: 50,
+                                   maxWidth: .infinity)
+                    }
+                    .keyboardShortcut(KeyboardShortcut(KeyEquivalent("n"), modifiers: .command))
+                } else {
+                    Button(action: {presentSheet(.add)}) {
+                        Text("New")
+                            .frame(minWidth: 50,
+                                   maxWidth: .infinity)
+                    }
                 }
-                
                 Button(action: {presentSheet(.edit)}) {
                     Text("Edit")
                         .frame(minWidth: 50,
@@ -56,6 +64,7 @@ struct DevicePreferences: View {
                         .frame(minWidth: 50,
                                maxWidth: .infinity)
                 }
+                .keyboardShortcut(.delete)
                 .disabled(selection.isEmpty || devices.isEmpty)
                 .alert(isPresented:$showDeleteAlert) {
                     Alert(
@@ -72,9 +81,6 @@ struct DevicePreferences: View {
                     DeviceView(device: device)
                         .tag(index)
                 }
-            }
-            .onDeleteCommand {
-                showDeleteAlert = true
             }
             .cornerRadius(8)
             .sheet(item: $activeSheet) { sheet in
