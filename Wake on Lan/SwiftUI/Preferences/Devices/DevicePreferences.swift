@@ -74,7 +74,7 @@ struct DevicePreferences: View {
                 }
             }
             .onDeleteCommand {
-                deleteSelectedDevices()
+                showDeleteAlert = true
             }
             .cornerRadius(8)
             .sheet(item: $activeSheet) { sheet in
