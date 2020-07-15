@@ -26,8 +26,15 @@ struct DeviceFormView: View {
             field("Port", description: "If you're not sure: 9", text: $port)
             
             HStack(alignment:.center) {
-                Button(action:cancelAction){
-                    Text("Cancel")
+                if #available(OSX 10.16, *) {
+                    Button(action:cancelAction){
+                        Text("Cancel")
+                    }
+                    .keyboardShortcut(.cancelAction)
+                } else {
+                    Button(action:cancelAction){
+                        Text("Cancel")
+                    }
                 }
                 Spacer()
                 Button(action:confirmAction){
