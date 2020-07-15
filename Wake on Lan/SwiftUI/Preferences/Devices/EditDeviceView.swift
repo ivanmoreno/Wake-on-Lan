@@ -21,8 +21,13 @@ struct EditDeviceView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: "pc")
+                if #available(OSX 10.16, *){
+                    Image(systemName: "pc")
                     .font(.title)
+                }else {
+                    Image(nsImage: NSImage(named: NSImage.bonjourName)!)
+                        .font(.title)
+                }
                 Text("Edit device")
                     .padding(.leading, 10)
                     .font(.title)

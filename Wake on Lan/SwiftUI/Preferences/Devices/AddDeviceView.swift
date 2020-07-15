@@ -19,8 +19,14 @@ struct AddDeviceView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: "plus.circle")
+                if #available(OSX 10.16, *){
+                    Image(systemName: "plus.circle")
                     .font(.title)
+                }else {
+                    Image(nsImage: NSImage(named: NSImage.addTemplateName)!)
+                        .font(.title)
+
+                }
                 Text("Add device")
                     .padding(.leading, 10)
                     .font(.title)

@@ -73,7 +73,6 @@ extension AKPreferencesWindow: NSToolbarDelegate {
             toolbarItem.toolTip = "Open Devices panel"
             if #available(OSX 10.16, *) {
                 toolbarItem.image = NSImage(systemSymbolName: "pc", accessibilityDescription: "")
-                toolbarItem.isBordered = true
             }else {
                 toolbarItem.image = NSImage(named: NSImage.bonjourName)
             }
@@ -89,7 +88,6 @@ extension AKPreferencesWindow: NSToolbarDelegate {
             toolbarItem.toolTip = "Open About panel"
             if #available(OSX 10.16, *) {
                 toolbarItem.image = NSImage(systemSymbolName: "info.circle", accessibilityDescription: "")
-                toolbarItem.isBordered = true
             }else {
                 toolbarItem.image = NSImage(named: NSImage.bonjourName)
             }

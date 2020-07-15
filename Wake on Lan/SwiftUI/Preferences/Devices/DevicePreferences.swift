@@ -49,12 +49,14 @@ struct DevicePreferences: View {
                         .frame(minWidth: 50,
                                maxWidth: .infinity)
                 }
+                .disabled(selection.count != 1 || devices.isEmpty)
                 
                 Button(action: {showDeleteAlert.toggle()}) {
                     Text("Delete")
                         .frame(minWidth: 50,
                                maxWidth: .infinity)
                 }
+                .disabled(selection.isEmpty || devices.isEmpty)
                 .alert(isPresented:$showDeleteAlert) {
                     Alert(
                         title: Text("Are you sure you want to delete this?"),

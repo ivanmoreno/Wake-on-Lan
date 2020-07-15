@@ -26,7 +26,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
         statusBarItem.menu = statusBarMenu
         if let button = self.statusBarItem.button {
-            button.image = NSImage(systemSymbolName: "network", accessibilityDescription: "Wake on Lan")
+            if #available(OSX 10.16, *){
+                button.image = NSImage(systemSymbolName: "network", accessibilityDescription: "Wake on Lan")
+            }else {
+                button.image = NSImage(named: NSImage.bonjourName)
+            }
         }
         
         // Core Data Context

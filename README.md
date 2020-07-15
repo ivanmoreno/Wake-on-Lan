@@ -1,7 +1,7 @@
 <h1 align="center">Wake on Lan for macOS</h1>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/macOS-11.0+-brightgreen.svg" />
+    <img src="https://img.shields.io/badge/macOS-10.15+-brightgreen.svg" />
     <img src="https://img.shields.io/badge/Swift-5.3-orange.svg" />
     <a href="https://twitter.com/ivanmorenoz">
         <img src="https://img.shields.io/badge/Contact-@ivanmorenoz-lightgrey.svg?style=flat" alt="Twitter: @ivanmorenoz" />
