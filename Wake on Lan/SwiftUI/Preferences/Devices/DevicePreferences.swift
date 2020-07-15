@@ -73,6 +73,9 @@ struct DevicePreferences: View {
                         .tag(index)
                 }
             }
+            .onDeleteCommand {
+                deleteSelectedDevices()
+            }
             .cornerRadius(8)
             .sheet(item: $activeSheet) { sheet in
                 if sheet == .add {
